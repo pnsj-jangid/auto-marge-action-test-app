@@ -9,7 +9,8 @@ env:
   # replace "github_username" with your GitHub username
   # replace "github.com/username/repo.git" with your GitHub repo path
   # do NOT replace ${{secrets.GITHUB_TOKEN}}, GitHub will take care of it
-  MY_REPO: https://pnsj-jangid:${{secrets.GITHUB_TOKEN}}@github.com:pnsj-jangid/auto-marge-action-test-app.git
+  MY_REPO: https://pnsj-jangid:${{secrets.GITHUB_TOKEN}}@github.com/pnsj-jangid/auto-marge-action-test-app.git
+
 
   # replace "long-lived_branch_name" with your branch name
   MY_BRANCH: develop
