@@ -1,17 +1,20 @@
-name: Make PR
+name: Create develop promotion pull request
 on:
   push:
     branches:
-      - develop
+      - main
 jobs:
-  createPR:
+  developPromotion:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          ref: develop
+      - name: Reset promotion branch
+        run: |
+          git fetch origin main:main
+          git reset --hard main
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: "Auto PR created"
-          branch: main
+          branch: develop-promotion
