@@ -26,7 +26,7 @@ jobs:
         uses: "pascalgn/automerge-action@v0.15.5"
         env:
           MERGE_DELETE_BRANCH: true
-          MERGE_LABELS: "automerge,!work in progress"
+          MERGE_LABELS: ""
           MERGE_COMMIT_MESSAGE: "pull-request-description"
           MERGE_FORKS: "false"
           MERGE_RETRIES: "6"
