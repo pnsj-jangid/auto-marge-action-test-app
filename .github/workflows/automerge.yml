@@ -25,7 +25,6 @@ jobs:
         uses: "pascalgn/automerge-action@v0.15.5"
         env:
           BASE_BRANCHES: "main"
-          BRANCHES: "develop"
           MERGE_DELETE_BRANCH: "true"
           MERGE_LABELS: ""
           MERGE_RETRIES: "6"
