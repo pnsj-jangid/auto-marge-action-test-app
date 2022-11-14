@@ -1,7 +1,6 @@
 name: Automerge
 
 on:
-  workflow_dispatch:
   schedule:
     # You can setup schedule here
     - cron: '*/2 * * * *'
