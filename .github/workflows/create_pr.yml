@@ -4,7 +4,7 @@ on:
     branches:
       - develop
 jobs:
-  developPR:
+  job1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,7 +19,7 @@ jobs:
         with:
           branch: develop
   notify:
-    needs: developPR
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - id: automerge
