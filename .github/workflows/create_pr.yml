@@ -18,15 +18,4 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           branch: develop
-  notify:
-    needs: job1
-    runs-on: ubuntu-latest
-    steps:
-      - id: automerge
-        name: automerge
-        uses: "pascalgn/automerge-action@v0.15.5"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          BASE_BRANCHES: "main"
-          MERGE_LABELS: ""
 
