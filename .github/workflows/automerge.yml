@@ -1,9 +1,9 @@
 name: Automerge Pull Request
 
 on:
-  schedule:
-    # You can setup schedule here
-    - cron: '*/2 * * * *'
+  push:
+    branches:
+      - develop
 
 env:
   # replace "github_username" with your GitHub username
@@ -32,8 +32,8 @@ jobs:
       run: |
         git clone ${{env.MY_REPO}} tmp
         cd tmp
-        git config user.name "PNSJ JANGID "
-        git config user.email "pnsj.jangid@gmail.com"
+        git config user.name "Brian"
+        git config user.email "brian.zhang@brokerageengine.com"
         git checkout ${{env.MASTER_BRANCH}}
         git config pull.rebase false
         git pull ${{env.MASTER_REPO}} ${{env.MY_BRANCH}}
@@ -47,8 +47,8 @@ jobs:
       run: |
         git clone ${{env.MY_REPO}} -b ${{env.RETS_IMPORT_BRANCH}} tmp
         cd tmp
-        git config user.name "PNSJ JANGID "
-        git config user.email "pnsj.jangid@gmail.com"
+        git config user.name "Brian"
+        git config user.email "brian.zhang@brokerageengine.com"
         git config pull.rebase false
         git pull ${{env.MASTER_REPO}} ${{env.MY_BRANCH}}
         git push
