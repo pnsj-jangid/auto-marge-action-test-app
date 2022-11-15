@@ -1,4 +1,4 @@
-name: Automerge
+name: Automerge Pull Request
 
 on:
   schedule:
@@ -21,17 +21,33 @@ env:
   # replace "master" with your master branch name
   MASTER_BRANCH: main
 
+  RETS_IMPORT_BRANCH: rets-import
+
 jobs:
-  merge:
+  merge-main:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Merge with main
+    - name: Merge develop into main branch
       run: |
-        git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmp
+        git clone ${{env.MY_REPO}} -b ${{env.MASTER_BRANCH}} tmp
         cd tmp
         git config user.name "PNSJ JANGID "
         git config user.email "pnsj.jangid@gmail.com"
         git config pull.rebase false
-        git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
+        git pull ${{env.MASTER_REPO}} ${{env.MY_BRANCH}}
+        git push
+
+  merge-rets-import:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Merge develop into rets-import branch
+      run: |
+        git clone ${{env.MY_REPO}} -b ${{env.RETS_IMPORT_BRANCH}} tmp
+        cd tmp
+        git config user.name "PNSJ JANGID "
+        git config user.email "pnsj.jangid@gmail.com"
+        git config pull.rebase false
+        git pull ${{env.MASTER_REPO}} ${{env.MY_BRANCH}}
         git push
