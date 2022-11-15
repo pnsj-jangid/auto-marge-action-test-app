@@ -19,3 +19,18 @@ jobs:
         with:
           branch: develop
 
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: rets-import
+      - name: Reset develop branch
+        run: |
+          git fetch origin develop:develop
+          git reset --hard develop
+      - name: Create Pull Request of develop branch
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: develop
+
