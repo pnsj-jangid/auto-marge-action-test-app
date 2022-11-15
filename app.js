@@ -9,18 +9,7 @@ const http = require('http');
 const hostname = '127.0.01.1';
 const port = 8080;
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-dfgdfgdfgdf
-1231212123
-123123123sfdfsdf
-kfjdsfjkdshfj 
-skldjfkldsjf
-skldfjdsljf
-skdjfkld
-12312312sdfsdfsd
-312312
-
+const acb = 7686756;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
