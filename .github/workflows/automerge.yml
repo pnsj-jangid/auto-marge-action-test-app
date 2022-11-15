@@ -30,10 +30,11 @@ jobs:
     steps:
     - name: Merge develop into main branch
       run: |
-        git clone ${{env.MY_REPO}} -b ${{env.MASTER_BRANCH}} tmp
+        git clone ${{env.MY_REPO}} tmp
         cd tmp
         git config user.name "PNSJ JANGID "
         git config user.email "pnsj.jangid@gmail.com"
+        git checkout ${{env.MASTER_BRANCH}}
         git config pull.rebase false
         git pull ${{env.MASTER_REPO}} ${{env.MY_BRANCH}}
         git push
